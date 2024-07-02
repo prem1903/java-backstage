@@ -1,0 +1,20 @@
+name: delete branch on close pr
+on: 
+  workflow_call:
+jobs:
+  delete-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete merged branch
+        uses: SvanBoxel/delete-merged-branch@1.4.3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}       
+        with:
+          delete_closed_pr: true
+          exclude: 	
+            -development	
+            -qa	
+            -feature-*
+
+
+

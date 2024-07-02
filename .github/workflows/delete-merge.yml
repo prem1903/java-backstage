@@ -1,0 +1,11 @@
+ name: delete-branch
+
+ on:  
+   pull_request: 
+     types: closed
+ jobs: 
+     branch:
+      uses: prema6396/java-gradle-project/.github/workflows/delete-branch.yml@master
+      secrets: inherit
+         
+  
